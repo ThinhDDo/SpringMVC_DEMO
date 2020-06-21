@@ -21,7 +21,26 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public List<User> getUsers() {
-		// TODO Auto-generated method stub
 		return sqlSession.selectList("SystemMapper.selectUsers");
+	}
+
+	@Override
+	public void addUser(User user) {
+		sqlSession.insert("SystemMapper.insertUser", user);
+	}
+
+	@Override
+	public void deleteUser(String id) {
+		sqlSession.delete("SystemMapper.deleteUser", id);
+	}
+
+	@Override
+	public void updateUser(User user) {
+		sqlSession.update("SystemMapper.updateUser", user);
+	}
+
+	@Override
+	public List<User> getUsersByName(String name) {
+		return sqlSession.selectList("SystemMapper.selectUsersByName", name);
 	}
 }

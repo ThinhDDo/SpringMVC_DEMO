@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container" style="max-width: 50%">
+
+		<h2 class="text-center">Edit User's Infomation</h2>
+
+		<form th:object="${user}" method="post" action="#" th:action="@{/update-save}"
+			class="needs-validations">
+			<div class="form-group">
+				<label>User ID</label> <input class="form-control" type="text"
+					th:field="*{id}" disabled>
+				<div class="invalid-tooltip">Please type USER ID</div>
+				<small class="form-text text-muted">E.g: user-xx</small>
+			</div>
+
+			<div class="form-group">
+				<label>User Full Name</label> <input class="form-control"
+					type="text" th:field="*{name}" required> <small
+					class="form-text text-muted">E.g: Nguyen Van An,...</small>
+				<div class="invalid-tooltip">USERNAME IS REQUIRED</div>
+			</div>
+
+			<div class="d-flex justify-content-left">
+				<button class="btn btn-primary" type="submit">Update</button>
+				<a class="btn btn-secondary ml-2" type="text" th:href="@{/getAllUsers}">Back</a>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

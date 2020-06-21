@@ -24,4 +24,24 @@ public class UserServiceImp implements UserService {
 	public List<User> getUsers() {
 		return userDAO.getUsers();
 	}
+
+	@Override
+	public void addUser(User user) {
+		userDAO.addUser(user);
+	}
+
+	@Override
+	public void deleteUser(String id) {
+		userDAO.deleteUser(id);
+	}
+
+	@Override
+	public void updateUser(User user) {
+		userDAO.updateUser(user);
+	}
+
+	@Override
+	public List<User> getUsersByName(String name) {
+		return userDAO.getUsersByName(name);
+	}
 }
